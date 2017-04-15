@@ -42,24 +42,24 @@
                 <section class="scrollable padder">              
                   <section class="row m-b-md">
                     <div class="col-sm-6">
-                      <h2 class="m-b-xs text-black">Businesses Like Me results</h2>
-                      <small>Find business opportunities in <i class="fa fa-map-marker fa-lg text-primary"></i> South Dakota</small>
+                      <h1 class="m-b-xs text-black">Search Results</h1>
+                      <large>Find business opportunities in <i class="fa fa-map-marker fa-lg text-primary"></i> South Dakota</large>
                     </div>
 
-                    <div class="col-sm-2 text-right text-left-s m-t-md">
+                    <div class="col-sm-6" style="margin-top:10px">
                       <form class="navbar-form navbar-left input-s-lg m-t m-l-n-xs hidden-xs" action="local_file" method="post" role="search">
                         <div class="form-group">
                           <div class="input-group">
                             <span class="input-group-btn">
-                              <button type="submit" class="btn btn-sm bg-white b-white btn-icon"><i class="fa fa-search"></i></button>
+                              <button type="submit" class="btn btn-lg bg-white b-white btn-icon"><i class="fa fa-search"></i></button>
                             </span>
-                            <input type="text" name="location_id" class="form-control input-m no-border" placeholder="Search for a different zip code">            
+                            <input type="text" name="location_id" class="form-control input-lg no-border" placeholder="Search for different zip">            
                           </div>
                         </div>
                       </form>
                     </div>
-
                   </section>
+
                   <div class="row">
                     <div class="col-sm-6">
                       <div class="panel b-a">
@@ -115,7 +115,9 @@
                         </div>
                       </div>
                     </div>
-                    <div class="col-md-3 col-sm-6">
+                  </div>
+
+                    <!-- <div class="col-md-3 col-sm-6">
                       <div class="panel b-a">
                         <div class="panel-heading no-border bg-primary lt text-center">
                           <a href="#">
@@ -152,7 +154,9 @@
                           </div>
                         </div>
                       </div>
-                    </div>
+                    </div> -->
+
+
                     <div class="col-sm-3 hide">
                       <section class="panel b-a">
                         <header class="panel-heading b-b b-light">
@@ -198,9 +202,8 @@
                                   <li><a href="#"><input type="radio" name="b">Day</a></li>
                               </ul>
                             </div>
-                            <a href="#" class="btn btn-default btn-icon btn-rounded btn-sm">Go</a>
                           </div>
-                          Statistics
+                          Historical Statistics
                         </header>
                         <div class="panel-body">
                           <div id="flot-sp1ine" style="height:210px"></div>
@@ -208,19 +211,19 @@
                         <div class="row text-center no-gutter">
                           <div class="col-xs-3">
                             <span class="h4 font-bold m-t block">5,860</span>
-                            <small class="text-muted m-b block">Orders</small>
+                            <small class="text-muted m-b block">Contracts</small>
                           </div>
                           <div class="col-xs-3">
-                            <span class="h4 font-bold m-t block">10,450</span>
-                            <small class="text-muted m-b block">Sellings</small>
+                            <span class="h4 font-bold m-t block">450</span>
+                            <small class="text-muted m-b block">Companies</small>
                           </div>
                           <div class="col-xs-3">
-                            <span class="h4 font-bold m-t block">21,230</span>
-                            <small class="text-muted m-b block">Items</small>
+                            <span class="h4 font-bold m-t block">$21,230</span>
+                            <small class="text-muted m-b block">Total Contracts Value</small>
                           </div>
                           <div class="col-xs-3">
-                            <span class="h4 font-bold m-t block">7,230</span>
-                            <small class="text-muted m-b block">Customers</small>                        
+                            <span class="h4 font-bold m-t block">4</span>
+                            <small class="text-muted m-b block">Agencies</small>                        
                           </div>
                         </div>
                       </section>
@@ -230,20 +233,17 @@
                         <header class="font-bold padder-v">
                           <div class="btn-group pull-right">
                             <button data-toggle="dropdown" class="btn btn-sm btn-rounded btn-default dropdown-toggle">
-                              <span class="dropdown-label">Last 24 Hours</span> 
+                              <span class="dropdown-label">Last Year</span> 
                               <span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu dropdown-select">
-                                <li><a href="#"><input type="radio" name="a">Today</a></li>
-                                <li><a href="#"><input type="radio" name="a">Yesterday</a></li>
-                                <li><a href="#"><input type="radio" name="a">Last 24 Hours</a></li>
-                                <li><a href="#"><input type="radio" name="a">Last 7 Days</a></li>
-                                <li><a href="#"><input type="radio" name="a">Last 30 days</a></li>
-                                <li><a href="#"><input type="radio" name="a">Last Month</a></li>
+                                <li><a href="#"><input type="radio" name="a">Last 2 Years</a></li>
+                                <li><a href="#"><input type="radio" name="a">Last 3 Years</a></li>
+                                <li><a href="#"><input type="radio" name="a">Last 4 Years</a></li>
                                 <li><a href="#"><input type="radio" name="a">All Time</a></li>
                             </ul>
                           </div>
-                          Analysis
+                          Spending Breakdown
                         </header>
                         <div class="panel-body flot-legend">
                           <div id="flot-pie-donut"  style="height:240px"></div>
@@ -255,7 +255,51 @@
 
 
                   <div class="row">
+                    <center><h4>Recent Contracts</h4></center>
+                    <div class="line"></div>
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th width="100">CONTRACT ID</th>
+                          <th>DESCRIPTION</th>
+                          <th width="110">DATE</th>
+                          <th width="90">CONTRACT VALUE</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>6d058bc7-d49a-4c14-ad80-2bc2b1772a45</td>
+                          <td>IGF::OT::IGF ORACLE HARDWARE AND SOFTWARE MAINTENANCE </td>
+                          <td>10/6/16</td>
+                          <td>$749.00</td>
+                        </tr>
+                        <tr>
+                          <td>066448b8-04e4-49e0-a60d-584c5e4e0db0</td>
+                          <td>IGF::OT::IGF RIVERBED OPTIMIZED NETWORK ENGINEERING TOOLS ANNUAL SOFTWARE SUPPORT RENEWAL</td>
+                          <td>3/18/17</td>
+                          <td>$858.00</td>
+                        </tr>
+                        <tr>
+                          <td>6d058bc7-d49a-4c14-ad80-2bc2b1772a45</td>
+                          <td>IGF::OT::IGF ORACLE HARDWARE AND SOFTWARE MAINTENANCE </td>
+                          <td>10/6/16</td>
+                          <td>$749.00</td>
+                        </tr>
+                        <tr>
+                          <td>066448b8-04e4-49e0-a60d-584c5e4e0db0</td>
+                          <td>IGF::OT::IGF RIVERBED OPTIMIZED NETWORK ENGINEERING TOOLS ANNUAL SOFTWARE SUPPORT RENEWAL</td>
+                          <td>3/18/17</td>
+                          <td>$858.00</td>
+                        </tr>
+                        <tr>
+                          <td colspan="3" class="text-right no-border"><strong>Total</strong></td>
+                          <td><strong>$1607.00</strong></td>
+                        </tr>
+                      </tbody>
+                    </table>       
                   </div>
+
+
                 </section>
               </section>
             </section>
