@@ -17,20 +17,20 @@ base_url = 'https://spending-api.us/api/v1'
 awards = '/awards'
 query = '/?limit={}'.format(LIMIT)
 
-def process(result):
-    dictionary = {}
-    dictionary['meta'] = {}
-    num_results = len(result['results'])
-    dictionary['meta']['num_results'] = num_results
+# def process(result):
+#     dictionary = {}
+#     dictionary['meta'] = {}
+#     num_results = len(result['results'])
+#     dictionary['meta']['num_results'] = num_results
     
-    dictionary['results'] = []
-    for i in range(num_results):
-        agency = result['results'][i]['awarding_agency']['subtier_agency']['name']
-        recipient = result['results'][i]['recipient']['recipient_name']
+#     dictionary['results'] = []
+#     for i in range(num_results):
+#         agency = result['results'][i]['awarding_agency']['subtier_agency']['name']
+#         recipient = result['results'][i]['recipient']['recipient_name']
         
-        dictionary['results'].append({'agency' : agency, 'recipient':recipient})
+#         dictionary['results'].append({'agency' : agency, 'recipient':recipient})
         
-    return {'processed':dictionary, 'raw':result}
+#     return {'processed':dictionary, 'raw':result}
 
 @app.route('/')
 def index():
@@ -39,8 +39,8 @@ def index():
 @app.route('/local_file', methods = ['POST'])
 def local():
     zipcode = request.form['location_id']
-    l.filter_and_extract({'zipcode' : zipcode}, keys, limit=1000)
-    return render_template('dashboard.html')
+    data = l.filter_and_extract({'zipcode' : zipcode}, keys, limit=1000)
+    return render_template('dashboard.html', data=data)
 
 @app.route('/my-link', methods = ['POST'])
 def my_link():
