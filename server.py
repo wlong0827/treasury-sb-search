@@ -3,10 +3,15 @@ import json
 from flask import Flask, render_template, request
 import flask
 import pystache
+import local as l
 
 app = Flask(__name__)
 
-LIMIT = 100
+query = {'zipcode' : '03244'}
+keys = ['zipcode', 'dollarsobligated', 'fundingrequestingagencyid', 'effectivedate', 
+        'contractactiontype', 'descriptionofcontractrequirement', 'vendorname', 'streetaddress',
+        'city', 'state', 'productorservicecode', 'numberofemployees', 'unique_transaction_id']
+LIMIT = 1000
 
 base_url = 'https://spending-api.us/api/v1'
 awards = '/awards'
@@ -31,6 +36,12 @@ def process(result):
 def index():
   return render_template('template.html')
 
+@app.route('/local_file', methods = ['POST'])
+def local():
+    zipcode = request.form['location_id']
+    l.filter_and_extract({'zipcode' : zipcode}, keys, limit=1000)
+    return render_template('results.html')
+
 @app.route('/my-link', methods = ['POST'])
 def my_link():
     location = request.form['location_id']
@@ -48,7 +59,6 @@ def my_link():
     
     response = requests.get(url)
     result = response.json()
-#    result = process(result)
     
     return flask.jsonify(result)
 

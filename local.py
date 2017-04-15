@@ -9,16 +9,16 @@ import json
 # 			f1.write(lines[i])
 
 # Analysis
-query = {'zipcode' : '03244'}
-keys = ['zipcode', 'dollarsobligated', 'fundingrequestingagencyid', 'effectivedate', 
-		'contractactiontype', 'descriptionofcontractrequirement', 'vendorname', 'streetaddress',
-		'city', 'state', 'productorservicecode', 'numberofemployees', 'unique_transaction_id']
-LIMIT = 1000
+# query = {'zipcode' : '03244'}
+# keys = ['zipcode', 'dollarsobligated', 'fundingrequestingagencyid', 'effectivedate', 
+# 		'contractactiontype', 'descriptionofcontractrequirement', 'vendorname', 'streetaddress',
+# 		'city', 'state', 'productorservicecode', 'numberofemployees', 'unique_transaction_id']
+# LIMIT = 1000
 
-def filter(query):
+def filter(query, limit):
 	with open('treasury1.csv', 'r') as f:
 		lines = f.readlines()
-		lines = lines[0:LIMIT]
+		lines = lines[0:limit]
 		categories = lines[0].split(',')
 		cat_nums = []
 		cat_names = []
@@ -36,7 +36,7 @@ def filter(query):
 		for i in range(len(cat_names)):
 			cat_name = cat_names[i]
 			cat_num = cat_nums[i]
-			print "Filtering by {}".format(cat_name)
+			# print "Filtering by {}".format(cat_name)
 			for line in lines:
 				try:
 					l = line.split(',')
@@ -53,7 +53,7 @@ def filter(query):
 				except:
 					print "Failed on query", l
 		
-		print "Finished with {} results".format(len(results))
+		# print "Finished with {} results".format(len(results))
 		return results
 
 def extract(results, keys):
@@ -68,7 +68,7 @@ def extract(results, keys):
 					cat_nums.append(i)
 
 	json_dict = {}
-	print "Extracting {} results".format(len(results))
+	# print "Extracting {} results".format(len(results))
 	for i, result in enumerate(results):
 		json_dict[str(i)] = {}
 		for c in range(len(cat_nums)):
@@ -76,6 +76,8 @@ def extract(results, keys):
 
 	with open('data.json', 'w') as outfile:
 		json.dump(json_dict, outfile, indent=2)
+	# return json.dumps(json_dict, indent=2)
 
-r = filter(query)
-extract(r, keys)
+def filter_and_extract(query, keys, limit=1000):
+	r = filter(query, limit)
+	extract(r, keys)
