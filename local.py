@@ -74,7 +74,7 @@ def extract(results, keys):
 		for c in range(len(cat_nums)):
 			json_dict[str(i)][categories[cat_nums[c]]] = result[cat_nums[c]]
 
-	with open('data.json', 'w') as outfile:
+	with open('templates/data.json', 'w') as outfile:
 		json.dump(json_dict, outfile, indent=2)
 	# return json.dumps(json_dict, indent=2)
 
