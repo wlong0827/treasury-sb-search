@@ -40,7 +40,7 @@ def index():
 def local():
     zipcode = request.form['location_id']
     l.filter_and_extract({'zipcode' : zipcode}, keys, limit=1000)
-    return render_template('results.html')
+    return render_template('dashboard.html')
 
 @app.route('/my-link', methods = ['POST'])
 def my_link():

@@ -1,6 +1,0 @@
-div.container {
-    vertical-align: middle;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-}
