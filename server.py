@@ -41,9 +41,12 @@ def local():
     zipcode = request.form['location_id']
     size = request.form['size']
     industry = request.form['industry']
-    naics = int(industry[0:2])
-    query = {'zipcode' : zipcode}
+    query = {}
+    print zipcode
+    if not zipcode == "":
+        query['zipcode'] = zipcode
     if not industry == "Select":
+        naics = int(industry[0:2])
         query['principalnaicscode'] = naics
     if not size == "Select":
         query['numberofemployees'] = size

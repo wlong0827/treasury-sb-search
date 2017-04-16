@@ -35,7 +35,6 @@
 
     <section>
       <section class="hbox stretch">
-        <!-- .aside -->
       
         <!-- /.aside -->
         <section id="content">
@@ -46,17 +45,19 @@
                   <section class="row m-b-md">
                     <div class="col-sm-6">
                       <h1 class="m-b-xs text-black">Search Results</h1>
-                      <large>Find business opportunities in <i class="fa fa-map-marker fa-lg text-primary"></i> <ins id="city"></ins></large>
+                      <large>Find business opportunities near <i class="fa fa-map-marker fa-lg text-primary"></i> <ins id="city"></ins>, <ins id="state"></ins></large>
                     </div>
 
                     <div class="col-sm-6" style="margin-top:10px">
-                      <form class="navbar-form navbar-left input-s-lg m-t m-l-n-xs hidden-xs" action="local_file" method="post" role="search">
+                      <form class="navbar-form navbar-left input-s-lg m-t m-l-n-xs hidden-xs" action="/" role="search">
                         <div class="form-group">
                           <div class="input-group">
+                            
+                            <large class="text-muted text-u-c">Try a different Search</large>
                             <span class="input-group-btn">
                               <button type="submit" class="btn btn-lg bg-white b-white btn-icon"><i class="fa fa-search"></i></button>
                             </span>
-                            <input type="text" name="location_id" class="form-control input-lg no-border" placeholder="Search for different zip">            
+                            
                           </div>
                         </div>
                       </form>
@@ -230,6 +231,7 @@
                           if (size > 0) {
                             var columnCount = obj[0].length;
                             var city = obj[0]['city']
+                            var state = obj[0]['state']
                             var unique_businesses = []
                             var num_businesses = 0
                             var unique_agencies = []
@@ -253,6 +255,7 @@
                           else {
                             var columnCount = 1;
                             var city = "N/A"
+                            var state = "N/A"
                             var num_businesses = 0
                             var num_agencies = 0
                           }                   
@@ -260,6 +263,7 @@
                           var num_contracts = 0
 
                           document.getElementById("city").innerHTML = city
+                          document.getElementById("state").innerHTML = state
                           document.getElementById("businesses").innerHTML = num_businesses
                           document.getElementById("businesses_2").innerHTML = num_businesses
                           document.getElementById("agencies").innerHTML = num_agencies

@@ -8,30 +8,23 @@ import json
 # 			# print "{} out of {} complete".format(i, l)
 # 			f1.write(lines[i])
 
-# Analysis
-# query = {'zipcode' : '03244'}
-# keys = ['zipcode', 'dollarsobligated', 'fundingrequestingagencyid', 'effectivedate', 
-# 		'contractactiontype', 'descriptionofcontractrequirement', 'vendorname', 'streetaddress',
-# 		'city', 'state', 'productorservicecode', 'numberofemployees', 'unique_transaction_id']
-# LIMIT = 1000
-
 def intersect(results):
 	intersection = []
-	smallest_set = results[0]
+	if len(results) == 1:
+		return results[0]
 
-	for subset in results:
-		if len(subset) < len(smallest_set):
-			smallest_set = subset
-	for line in smallest_set:
-		for subset in results:
-			for l in subset:
-				try:
-					if line[0] == l[0]:
-						intersection.append(l)
+	for line in results[0]:
+		append = True
+		for subset in results[1:]:
+			if not line in subset:
+				append = False
+		if append:
+			intersection.append(line)
 
 	return intersection
 
 def filter(query, limit):
+
 	with open('treasury.csv', 'r') as f:
 		lines = f.readlines()
 		lines = lines[0:limit]
@@ -52,9 +45,9 @@ def filter(query, limit):
 			results.append([])
 			cat_name = cat_names[i]
 			cat_num = cat_nums[i]
-			append_or_not = False
 			# print "Filtering by {}".format(cat_name)
 			for line in lines[1:]:
+				append_or_not = False
 				# try:
 				l = line.split(',')
 				cur_val = l[cat_num]
@@ -75,7 +68,7 @@ def filter(query, limit):
 						if int(cur_val) >= 10 and int(cur_val) <= 100:
 							append_or_not = True
 					elif search_val == 'over 100 employees':
-						if int(cur_val) > 1000:
+						if int(cur_val) > 100:
 							append_or_not = True
 				elif cur_val == search_val:
 					append_or_not = True
@@ -86,7 +79,7 @@ def filter(query, limit):
 				# 	print "Failed on query"
 		
 		# print "Finished with {} results".format(len(results))
-		print "There are {} results".format(len(results[0]))
+		# print "There are {} results".format(len(results[0]))
 		return intersect(results)
 
 def extract(results, keys):
