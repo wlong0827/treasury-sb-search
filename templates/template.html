@@ -15,13 +15,45 @@
 
 <body>
 
-        <div class="col-sm-6" style="padding: 250px 0; text-align: left; margin-left:350px">
+
+        <div class="col-sm-6" style="padding: 200px 0; text-align: left; margin-left:350px">
           <section class="panel panel-default">
             <header class="panel-heading font-bold">Find Businesses Like You</header>
             <div class="panel-body">
               <form role="form" action="local_file" method="post">
                 <div class="form-group">
-                  <label>Where are you?</label>
+                  <label>What industry are you in?</label>
+                    <select name="industry" class="form-control m-b">
+                        <option>Select</option>
+                      <option>11  Agriculture, Forestry, Fishing and Hunting</option>
+                      <option>21  Mining</option>
+                       <option>22  Utilities</option>
+                       <option>23  Construction</option>
+                        <option>31   Manufacturing   </option>
+                        <option>42  Wholesale Trade</option>
+                       <option>44  Retail Trade</option>
+                       <option>48   Transportation and Warehousing</option>
+                       <option>51  Information</option>
+                       <option>52  Finance and Insurance   </option>
+                        <option>53  Real Estate Rental and Leasing  </option>
+                      <option>54  Professional, Scientific, and Technical Services    </option>
+                      <option>55  Management of Companies and Enterprises</option>
+                       <option>56  Administrative and Support and Waste Management and Remediation Services    </option>
+                       <option>61  Educational Services</option>
+                       <option>62  Health Care and Social Assistance   </option>
+                       <option>71  Arts, Entertainment, and Recreation</option>
+                       <option>72  Accommodation and Food Services</option>
+                       <option>81  Other Services (except Public Administration)</option>
+                       <option>92  Public Administration</option>
+                    </select>
+                  <label>How big is your company?</label>
+                    <select name="size" class="form-control m-b">
+                        <option>Select</option>
+                      <option>under 10 employees</option>
+                      <option>10 - 100 employees</option>
+                      <option>over 100 employees</option>
+                    </select>
+                  <label>Where are you located?</label>
                   <input name="location_id" class="form-control" placeholder="Enter Zip Code">
                 </div>
                 <!-- <div class="checkbox i-checks">

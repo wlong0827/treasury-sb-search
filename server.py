@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 # query = {'zipcode' : '03244'}
 keys = ['zipcode', 'dollarsobligated', 'fundingrequestingagencyid', 'effectivedate', 
-        'contractactiontype', 'descriptionofcontractrequirement', 'vendorname', 'streetaddress',
+        'contractactiontype', 'descriptionofcontractrequirement', 'vendorname', 'principalnaicscode',
         'city', 'state', 'productorservicecode', 'numberofemployees', 'unique_transaction_id']
 LIMIT = 1000
 
@@ -39,7 +39,17 @@ def index():
 @app.route('/local_file', methods = ['POST'])
 def local():
     zipcode = request.form['location_id']
-    data = l.filter_and_extract({'zipcode' : zipcode}, keys, limit=1000)
+    size = request.form['size']
+    industry = request.form['industry']
+    naics = int(industry[0:2])
+    query = {'zipcode' : zipcode}
+    if not industry == "Select":
+        query['principalnaicscode'] = naics
+    if not size == "Select":
+        query['numberofemployees'] = size
+
+    data = l.filter_and_extract(query, keys, limit=1000)
+    # print data
     return render_template('dashboard.html', data=data)
 
 @app.route('/my-link', methods = ['POST'])

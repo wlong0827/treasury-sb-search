@@ -2,7 +2,7 @@
 <html lang="en" class="app">
 <head>  
   <meta charset="utf-8" />
-  <title>Scale | Web Application</title>
+  <title>Treasury Small Business Search</title>
   <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
   <!-- <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
@@ -46,7 +46,7 @@
                   <section class="row m-b-md">
                     <div class="col-sm-6">
                       <h1 class="m-b-xs text-black">Search Results</h1>
-                      <large>Find business opportunities in <i class="fa fa-map-marker fa-lg text-primary"></i> South Dakota</large>
+                      <large>Find business opportunities in <i class="fa fa-map-marker fa-lg text-primary"></i> <ins id="city"></ins></large>
                     </div>
 
                     <div class="col-sm-6" style="margin-top:10px">
@@ -74,8 +74,8 @@
                                 <i class="i i-plus2 i-1x text-white"></i>
                               </span>
                               <span class="clear">
-                                <span class="h3 block m-t-xs text-danger">20</span>
-                                <small class="text-muted text-u-c">New Businesses this year</small>
+                                <span class="h3 block m-t-xs text-danger"><strong id="businesses"></strong></span>
+                                <small class="text-muted text-u-c">businesses like you</small>
                               </span>
                             </a>
                           </div>
@@ -119,45 +119,6 @@
                       </div>
                     </div>
                   </div>
-
-                    <!-- <div class="col-md-3 col-sm-6">
-                      <div class="panel b-a">
-                        <div class="panel-heading no-border bg-primary lt text-center">
-                          <a href="#">
-                            <i class="fa fa-facebook fa fa-3x m-t m-b text-white"></i>
-                          </a>
-                        </div>
-                        <div class="padder-v text-center clearfix">                            
-                          <div class="col-xs-6 b-r">
-                            <div class="h3 font-bold">42k</div>
-                            <small class="text-muted">Friends</small>
-                          </div>
-                          <div class="col-xs-6">
-                            <div class="h3 font-bold">90</div>
-                            <small class="text-muted">Feeds</small>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                      <div class="panel b-a">
-                        <div class="panel-heading no-border bg-info lter text-center">
-                          <a href="#">
-                            <i class="fa fa-twitter fa fa-3x m-t m-b text-white"></i>
-                          </a>
-                        </div>
-                        <div class="padder-v text-center clearfix">                            
-                          <div class="col-xs-6 b-r">
-                            <div class="h3 font-bold">27k</div>
-                            <small class="text-muted">Tweets</small>
-                          </div>
-                          <div class="col-xs-6">
-                            <div class="h3 font-bold">15k</div>
-                            <small class="text-muted">Followers</small>
-                          </div>
-                        </div>
-                      </div>
-                    </div> -->
 
 
                     <div class="col-sm-3 hide">
@@ -213,19 +174,19 @@
                         </div>
                         <div class="row text-center no-gutter">
                           <div class="col-xs-3">
-                            <span class="h4 font-bold m-t block">5,860</span>
+                            <span class="h4 font-bold m-t block"><p id="contracts"></p></span>
                             <small class="text-muted m-b block">Contracts</small>
                           </div>
                           <div class="col-xs-3">
-                            <span class="h4 font-bold m-t block">450</span>
+                            <span class="h4 font-bold m-t block"><p id="businesses_2"></p></span>
                             <small class="text-muted m-b block">Companies</small>
                           </div>
                           <div class="col-xs-3">
-                            <span class="h4 font-bold m-t block">$21,230</span>
+                            <span class="h4 font-bold m-t block"><p id="total"></p></span>
                             <small class="text-muted m-b block">Total Contracts Value</small>
                           </div>
                           <div class="col-xs-3">
-                            <span class="h4 font-bold m-t block">4</span>
+                            <span class="h4 font-bold m-t block"><p id="agencies"></p></span>
                             <small class="text-muted m-b block">Agencies</small>                        
                           </div>
                         </div>
@@ -264,22 +225,63 @@
                           var contracts = {{ data | tojson }}; 
                           // document.getElementById("print").innerHTML = contracts
                           var obj = JSON.parse(contracts);
-                          
                           var size = Object.keys(obj).length;
-                          var columnCount = obj[0].length;
-                          var total = 0
 
-                          var myTable = "<table class='table'><thead><tr><th width='100'>CONTRACT ID</th><th>DESCRIPTION</th><th width='90'>DATE</th><th width='90'>CONTRACT VALUE</th></tr></thead><tbody>";
+                          if (size > 0) {
+                            var columnCount = obj[0].length;
+                            var city = obj[0]['city']
+                            var unique_businesses = []
+                            var num_businesses = 0
+                            var unique_agencies = []
+                            var num_agencies = 0
+
+                            for (var i = 0; i < size; i++) {
+                              var name = obj[i.toString()]['vendorname'] 
+                              if (unique_businesses.indexOf(name) == -1) {
+                                num_businesses += 1
+                                unique_businesses.push(name)
+                              }
+
+                              var agency = obj[i.toString()]['fundingrequestingagencyid'] 
+                              if (unique_agencies.indexOf(name) == -1) {
+                                num_agencies += 1
+                                unique_agencies.push(name)
+                              }
+                            }
+
+                          }       
+                          else {
+                            var columnCount = 1;
+                            var city = "N/A"
+                            var num_businesses = 0
+                            var num_agencies = 0
+                          }                   
+                          var total = 0
+                          var num_contracts = 0
+
+                          document.getElementById("city").innerHTML = city
+                          document.getElementById("businesses").innerHTML = num_businesses
+                          document.getElementById("businesses_2").innerHTML = num_businesses
+                          document.getElementById("agencies").innerHTML = num_agencies
+
+                          var myTable = "<table class='table'><thead><tr><th width='100'>CONTRACT ID</th><th>COMPANY</th><th>DESCRIPTION</th><th width='90'>DATE</th><th width='90'>CONTRACT VALUE</th></tr></thead><tbody>";
 
                           for (var i = 0; i < size; i++) {
-                              myTable += "<tr><td>" + obj[i.toString()]['unique_transaction_id'] + "</td><td>" + obj[i.toString()]['descriptionofcontractrequirement'] +" </td><td>" + obj[i.toString()]['effectivedate'] + "</td><td> $" + obj[i.toString()]['dollarsobligated'] + "</td></tr>";
+                              myTable += "<tr><td>" + obj[i.toString()]['unique_transaction_id'] + "</td><td>" + obj[i.toString()]['vendorname'] + "</td><td>" + obj[i.toString()]['descriptionofcontractrequirement'] +" </td><td>" + obj[i.toString()]['effectivedate'] + "</td><td> $" + obj[i.toString()]['dollarsobligated'] + "</td></tr>";
 
                               total += parseInt(obj[i.toString()]['dollarsobligated']);
+                              num_contracts += 1
+                          }
+                          
+                          if (size == 0) {
+                            myTable += "<tr><td>N/A</td><td>No Results found for this search</td><td>N/A</td><td>N/A</td></tr>"
                           }
 
                           myTable += "<tr><td colspan='3' class='text-right no-border'><strong>Total</strong></td><td><strong>$" + total + "</strong></td></tr></tbody></table>"
 
                           document.write( myTable);
+                          document.getElementById("total").innerHTML = "$" + total.toString()
+                          document.getElementById("contracts").innerHTML = num_contracts.toString()
                           
                       </script>
 
