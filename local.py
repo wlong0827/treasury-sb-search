@@ -45,7 +45,7 @@ def filter(query, limit):
 			results.append([])
 			cat_name = cat_names[i]
 			cat_num = cat_nums[i]
-			# print "Filtering by {}".format(cat_name)
+
 			for line in lines[1:]:
 				append_or_not = False
 				# try:
@@ -75,11 +75,7 @@ def filter(query, limit):
 
 				if append_or_not:
 					results[i].append(l)
-				# except:
-				# 	print "Failed on query"
-		
-		# print "Finished with {} results".format(len(results))
-		# print "There are {} results".format(len(results[0]))
+	
 		return intersect(results)
 
 def extract(results, keys):

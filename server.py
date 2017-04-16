@@ -7,7 +7,6 @@ import local as l
 
 app = Flask(__name__)
 
-# query = {'zipcode' : '03244'}
 keys = ['zipcode', 'dollarsobligated', 'fundingrequestingagencyid', 'effectivedate', 
         'contractactiontype', 'descriptionofcontractrequirement', 'vendorname', 'principalnaicscode',
         'city', 'state', 'productorservicecode', 'numberofemployees', 'unique_transaction_id']
