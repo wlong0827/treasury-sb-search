@@ -3,7 +3,9 @@ Spring 2017 DPI-663 Final Project: using the new U.S. Treasury spending API to p
 
 How to Run the service
 
-1. Download the repository as a ZIP file and open it
-2. In the terminal, navigate to the repository and call `pip install -r requirements`
-3. To start the Flask server, run `python server.py`
-4. In your browser, navigate to `localhost:5000`
+1. Download the repository as a ZIP file by clicking "Clone or Download" 
+2. Unzip the repository and move it to your Desktop
+3. In the terminal, navigate to the repository by calling `cd Desktop` then `cd treasury-sb-search`
+4. Call `pip install -r requirements.txt`
+5. To start the Flask server, run `python server.py`
+6. In your browser, navigate to `localhost:5000`
