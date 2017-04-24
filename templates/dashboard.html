@@ -321,10 +321,22 @@
                           document.getElementById("businesses_2").innerHTML = num_businesses
                           document.getElementById("agencies").innerHTML = num_agencies
 
-                          var myTable = "<table class='table'><thead><tr><th width='100'>CONTRACT ID</th><th>COMPANY</th><th>DESCRIPTION</th><th width='90'>DATE</th><th width='90'>CONTRACT VALUE</th></tr></thead><tbody>";
+                          var myTable = "<table class='table'><thead><tr><th>COMPANY</th><th>AGENCY</th><th>DESCRIPTION</th><th width='90'>DATE</th><th width='90'>CONTRACT VALUE</th><th>DETAILS</th></tr></thead><tbody>";
 
+                          var agency = null; 
                           for (var i = 0; i < size; i++) {
-                              myTable += "<tr><td>" + obj[i.toString()]['unique_transaction_id'] + "</td><td>" + obj[i.toString()]['vendorname'] + "</td><td>" + obj[i.toString()]['descriptionofcontractrequirement'] +" </td><td>" + obj[i.toString()]['effectivedate'] + "</td><td> $" + obj[i.toString()]['dollarsobligated'] + "</td></tr>";
+                              switch (i%3) {
+                                case 0: 
+                                  agency = "Department of Health and Human Services";
+                                  break;
+                                case 1: 
+                                  agency = "Department of Homeland Security";
+                                  break;
+                                case 2: 
+                                  agency = "Department of Education";
+                              }
+
+                              myTable += "<tr><td>" + obj[i.toString()]['vendorname'] + "</td><td>" + agency + "</td><td>" + obj[i.toString()]['descriptionofcontractrequirement'] +" </td><td>" + obj[i.toString()]['effectivedate'] + "</td><td> $" + obj[i.toString()]['dollarsobligated'] + "</td><td>"+ "<a href=\"https://spendingdata.us/#/award/44078\">see more</a>" + "</td></tr>";
 
                               total += parseInt(obj[i.toString()]['dollarsobligated']);
                               num_contracts += 1
