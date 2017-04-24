@@ -16,6 +16,7 @@
   <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/js/calendar/bootstrap_calendar.css') }}">
   <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/css/dashboard.css') }}">
 
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/js/jvectormap/jquery-jvectormap-1.2.2.css') }}">
   <link rel="stylesheet" href="tabulator.css">
   <script type="text/javascript" src="tabulator.js"></script>
 
@@ -26,42 +27,34 @@
   <![endif]-->
 </head>
 <body class="" >
+    
   <section class="vbox">
 
     <section>
       <section class="hbox stretch">
       
         <!-- /.aside -->
-        <section id="content">
+        <section id="content" style="background-color: rgb(242,244,248)">
           <section class="hbox stretch">
             <section>
               <section class="vbox">
                 <section class="scrollable padder">              
-                  <section class="row m-b-md">
-                    <div class="col-sm-6">
-                      <h1 class="m-b-xs text-black">Search Results</h1>
-                      <large>Find business opportunities near <i class="fa fa-map-marker fa-lg text-primary"></i> <ins id="city"></ins>, <ins id="state"></ins></large>
+                  <section class="row m-b-md" style="margin-top:50px">
+                      <div class="col-sm-4"></div>
+                      <div class="col-sm-4">
+                      <center><h1 class="m-b-xs text-black" style="font-size:40px">Businesses Like Me</h1></center>
+                        <center><large style="font-size:20px">Searching near <i class="fa fa-map-marker fa-lg text-primary"></i> <ins id="city"></ins>, <ins id="state"></ins></large></center>
+                      
                     </div>
 
-                    <div class="col-sm-6" style="margin-top:10px">
-                      <form class="navbar-form navbar-left input-s-lg m-t m-l-n-xs hidden-xs" action="/" role="search">
-                        <div class="form-group">
-                          <div class="input-group">
-                            
-                            <large class="text-muted text-u-c">Try a different Search</large>
-                            <span class="input-group-btn">
-                              <button type="submit" class="btn btn-lg bg-white b-white btn-icon"><i class="fa fa-search"></i></button>
-                            </span>
-                            
-                          </div>
-                        </div>
-                      </form>
+                    <div class="col-sm-4" style="text-align:right; margin-top:10px">
+                        <large class="text-muted text-u-c">Try a different Search   <a href="/"><i class="fa fa-search"></i></a></large>
                     </div>
                   </section>
 
-                  <div class="row">
+                  <div class="row" style="margin-top:80px; margin-bottom:80px">
                     <div class="col-sm-6">
-                      <div class="panel b-a">
+                      <div class="panel b-a" style="margin-left:50px">
                         <div class="row m-n">
                           <div class="col-md-6 b-b b-r">
                             <a href="#" class="block padder-v hover">
@@ -82,19 +75,26 @@
                                 <i class="i i-users2 i-sm text-white"></i>
                               </span>
                               <span class="clear">
-                                <span class="h3 block m-t-xs text-success">75%</span>
+                                <span class="h3 block m-t-xs text-success">7.5%</span>
                                 <small class="text-muted text-u-c">Increase in Contracts</small>
                               </span>
                             </a>
                           </div>
-                          <div class="col-md-6 b-b b-r">
+                        </div>       
+                      </div>
+                    </div>
+                      
+                      <div class="col-sm-6">
+                        <div class="panel b-a" style="margin-right:50px">
+                          <div class="row m-n">
+                              <div class="col-md-6 b-b b-r">
                             <a href="#" class="block padder-v hover">
                               <span class="i-s i-s-2x pull-left m-r-sm">
                                 <i class="i i-hexagon2 i-s-base text-info hover-rotate"></i>
                                 <i class="i i-location i-sm text-white"></i>
                               </span>
                               <span class="clear">
-                                <span class="h3 block m-t-xs text-info">20 <span class="text-sm">mile</span></span>
+                                <span class="h3 block m-t-xs text-info">250 <span class="text-sm">mile</span></span>
                                 <small class="text-muted text-u-c">Search Range</small>
                               </span>
                             </a>
@@ -106,13 +106,13 @@
                                 <i class="i i-alarm i-sm text-white"></i>
                               </span>
                               <span class="clear">
-                                <span class="h3 block m-t-xs text-primary">8 years</span>
-                                <small class="text-muted text-u-c">Length of historical data</small>
+                                <span class="h3 block m-t-xs text-primary">1 year(s)</span>
+                                <small class="text-muted text-u-c">Span of historical data</small>
                               </span>
                             </a>
                           </div>
                         </div>
-                      </div>
+                    </div>
                     </div>
                   </div>
 
@@ -179,9 +179,10 @@ Number of employees: 20<br>
                         </div>
                       </section>                      
                     </div>
-                  </div>           
+                  </div>       
+                  
                   <div class="row bg-light dk m-b">
-                    <div class="col-md-6 dker">
+                    <div class="col-md-12 dker">
                       <section>
                         <header class="font-bold padder-v">
                           <div class="pull-right">
@@ -222,34 +223,10 @@ Number of employees: 20<br>
                         </div>
                       </section>
                     </div>
-                    <div class="col-md-6">
-                      <section>
-                        <header class="font-bold padder-v">
-                          <div class="btn-group pull-right">
-                            <button data-toggle="dropdown" class="btn btn-sm btn-rounded btn-default dropdown-toggle">
-                              <span class="dropdown-label">Last Year</span> 
-                              <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu dropdown-select">
-                                <li><a href="#"><input type="radio" name="a">Last 2 Years</a></li>
-                                <li><a href="#"><input type="radio" name="a">Last 3 Years</a></li>
-                                <li><a href="#"><input type="radio" name="a">Last 4 Years</a></li>
-                                <li><a href="#"><input type="radio" name="a">All Time</a></li>
-                            </ul>
-                          </div>
-                          Spending Breakdown
-                        </header>
-                        <div class="panel-body flot-legend">
-                          <div id="flot-pie-donut"  style="height:240px"></div>
-                        </div>
-                      </section>
-                    </div>
                   </div>
-
-
-
-                  <div class="row">
-                    <center><h4>Recent Contracts</h4></center>
+                  
+                  <div class="row" style="margin-top:80px">
+                    <center><h4 style="font-size:30px">Recent Contracts</h4></center>
 
                     <script> 
                           var contracts = {{ data | tojson }}; 
@@ -321,12 +298,18 @@ Number of employees: 20<br>
                     <div class="line"></div>
                   </div>
 
-
+                <div class="row" style="margin-top:50px; margin-bottom:80px">
+                <center><h4 style="font-size:30px">Where to Go from Here</h4></center>
+                    <hr>
+                <center><a href="https://www.fbo.gov/">Fed Biz Opps</a></center>
+                  </div>
+                  
                 </section>
               </section>
             </section>
             
           </section>
+          
           <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open" data-target="#nav,html"></a>
         </section>
       </section>
@@ -351,6 +334,12 @@ Number of employees: 20<br>
   <script src="{{ url_for('static',filename='styles/js/charts/flot/jquery.flot.pie.min.js') }}"></script>
   <script src="{{ url_for('static',filename='styles/js/charts/flot/demo.js') }}"></script>
   <script src="{{ url_for('static',filename='styles/js/calendar/demo.js') }}"></script>
+    
+    <script src="{{ url_for('static',filename='styles/js/slimscroll/jquery.slimscroll.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='styles/js/jvectormap/jquery-jvectormap-us-aea-en.js') }}"></script>
+    <script src="{{ url_for('static',filename='styles/js/jvectormap/jquery-jvectormap-1.2.2.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='styles/js/jvectormap/demo.js') }}"></script>
+    <script src="{{ url_for('static',filename='styles/js/app.plugin.js') }}"></script>
 
 </body>
 </html>
