@@ -38,24 +38,25 @@ def index():
 
 @app.route('/local_file', methods = ['POST'])
 def local():
-    zipcode = request.form['zipcode']
+    state = request.form['state-select']
     size = request.form['size']
-    industry = request.form['naics2']
-    print zipcode
-    print size
-    print industry
+    naics2 = request.form['naics2']
+    naics4 = request.form['naics4']
+    zipcode = request.form['zipcode-select']
+    
     query = {}
-    print zipcode
     if not zipcode == "":
-        query['zipcode'] = zipcode
-    if not industry == "Select":
-        naics = int(industry[0:2])
-        query['principalnaicscode'] = naics
+        query['zipcode'] = str(zipcode)
+    if not naics4 == "Select":
+        naics = int(naics4[0:4])
+        query['principalnaicscode'] = str(naics)
     if not size == "Select":
-        query['numberofemployees'] = size
+        query['numberofemployees'] = str(size)
+    if state == "CA":
+        query['zipcode'] = "92101"
 
     data = l.filter_and_extract(query, keys, limit=1000)
-    # print data
+    print data
     return render_template('dashboard.html', data=data)
 
 @app.route('/my-link', methods = ['POST'])

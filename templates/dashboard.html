@@ -39,56 +39,84 @@
             <section>
               <section class="vbox">
                 <section class="scrollable padder">              
-                  <section class="row m-b-md" style="margin-top:50px">
+                  <section class="row m-b-md" style="margin-top:10px">
                       <div class="col-sm-3"></div>
                       <div class="col-sm-6">
                       <center>
-                        <h1 class="m-b-xs text-black" style="font-size:40px">Businesses Like Me</h1>
-                        <h4>Discover past government spending for businesses similar to yours.</h4>
+                        <p class="h2 font-bold m-t">Businesses Like Me</p>
+                        <p class="h4 font-bold m-t">Discover past government spending for businesses similar to yours</p>
                       </center>
-                      <center><large style="font-size:20px">Searching near <i class="fa fa-map-marker fa-lg text-primary"></i> <ins id="city"></ins>, <ins id="state"></ins></large></center>                      
-                    </div>
-
-                    <div class="col-sm-3" style="text-align:right; margin-top:10px">
-                        <large class="text-muted text-u-c">Try a different Search   <a href="/"><i class="fa fa-search"></i></a></large>
+                      <!-- <center><large style="font-size:20px">Searching near <i class="fa fa-map-marker fa-lg text-primary"></i> <ins id="city"></ins>, <ins id="state"></ins></large></center> -->                      
                     </div>
                   </section>
 
 
-                  <div class="row" style="margin-top:40px; margin-bottom:40px; margin-left: 35px; margin-right: 35px; background-color: rgb(242,244,248);">
+                  <section class="panel panel-default">
+                <header class="panel-heading font-bold">Search Again</header>
+                <div class="panel-body">
+                  <div class="row">
                     <div class="col-sm-12">
                       <div>
                         <div class="row m-n">
-                          <div class="col-md-4">
+                          <div class="col-md-3">
                             <span>Industry:</span>
-                            <select>
-                              <option value="volvo">Information</option>
-                              <option value="saab">Consulting</option>
-                              <option value="mercedes">Retail</option>
-                              <option value="audi">Utilities</option>
+                            <select style="width:50%">
+                              <option>Select</option>
+                      <option>11  Agriculture, Forestry, Fishing and Hunting</option>
+                      <option>21  Mining</option>
+                       <option>22  Utilities</option>
+                       <option>23  Construction</option>
+                        <option>31   Manufacturing   </option>
+                        <option>42  Wholesale Trade</option>
+                       <option>44  Retail Trade</option>
+                       <option>48   Transportation and Warehousing</option>
+                       <option>51  Information</option>
+                       <option>52  Finance and Insurance   </option>
+                        <option>53  Real Estate Rental and Leasing  </option>
+                      <option>54  Professional, Scientific, and Technical Services    </option>
+                      <option>55  Management of Companies and Enterprises</option>
+                       <option>56  Administrative and Support and Waste Management and Remediation Services    </option>
+                       <option>61  Educational Services</option>
+                       <option>62  Health Care and Social Assistance   </option>
+                       <option>71  Arts, Entertainment, and Recreation</option>
+                       <option>72  Accommodation and Food Services</option>
+                       <option>81  Other Services (except Public Administration)</option>
+                       <option>92  Public Administration</option>
                             </select>
 
                           </div>
-                          <div class="col-md-4">
-                            <span>Location:</span>
+                          <div class="col-md-3">
+                            <span>Zipcode:</span>
                             <input type="text" name="location"></input>
                           </div>
-                          <div class="col-md-4">
+                          <div class="col-md-3">
                             <span>Size:</span>
                             <select>
-                              <option value="volvo">1-9</option>
-                              <option value="saab">10-49</option>
-                              <option value="mercedes">0-99</option>
-                              <option value="audi">100+</option>
+                              <option>Select</option>
+                      <option>Under 10 employees</option>
+                      <option>Between 10 - 49 employees</option>
+                        <option>Between 50 - 99 employees</option>
+                      <option>Over 100 employees</option>
                             </select>
                           </div>
+
+                          <div class="col-md-3">
+                            <a href="/" type="submit" class="btn btn-sm btn-default" style="margin-top:-3px">Search Again</a>
+                            
+                          </div>
+
                         </div>       
                       </div>
                     </div>                     
                   </div>
+                  </div>
+                  </section>
 
+                  <section class="panel panel-default">
+                <header class="panel-heading font-bold">Key Figures</header>
+                <div class="panel-body">
 
-                  <div class="row" style="margin-top:40px; margin-bottom:40px">
+                    <div class="row">
                     <div class="col-sm-6">
                       <div class="panel b-a" style="margin-left:50px">
                         <div class="row m-n">
@@ -130,7 +158,7 @@
                                 <i class="i i-location i-sm text-white"></i>
                               </span>
                               <span class="clear">
-                                <span class="h3 block m-t-xs text-info">$458,000<span class="text-sm"></span></span>
+                                <span class="h3 block m-t-xs text-info">$1,239.29<span class="text-sm"></span></span>
                                 <small class="text-muted text-u-c">Average contract value</small>
                               </span>
                             </a>
@@ -142,7 +170,7 @@
                                 <i class="i i-alarm i-sm text-white"></i>
                               </span>
                               <span class="clear">
-                                <span class="h3 block m-t-xs text-primary">$2,322,800</span>
+                                <span class="h3 block m-t-xs text-primary">$12,814</span>
                                 <small class="text-muted text-u-c">Total contract value</small>
                               </span>
                             </a>
@@ -152,15 +180,22 @@
                     </div>
                   </div>
 
+                </div>
+                </section>
 
-                  <div class="row" style="margin-top:40px; margin-bottom:40px; margin-left: 35px; margin-right: 35px;">
+                  
+                  <section class="panel panel-default">
+                <header class="panel-heading font-bold">Businesses Like You</header>
+                <div class="panel-body">
+
+                  <div class="row">
                     <div class="col-sm-12">
                       <div class="panel b-a">
                         <div class="row m-n">
                           <div class="col-md-3 b-b b-r">
                             <a href="https://spendingdata.us/#/award/44078" class="block padder-v hover">
-                              Clark Creative<br>
-                              $154,000 from 4 contracts in FY 2016<br>
+                              <b>The Washboard Laundry</b><br>
+                              $1540 from 4 contracts in FY 2016<br>
                               Address: 3812 Ray St, San Diego, CA 92104<br>
                               <!-- Top Awarding Agency: Department of Health and Human Services<br> -->
                               Number of employees: 15<br>
@@ -168,17 +203,17 @@
                           </div>
                           <div class="col-md-3 b-b b-r">
                             <a href="https://spendingdata.us/#/award/44078" class="block padder-v hover">
-                               Rethink Design Studio<br>
-                              $1,489,000 from 7 contracts in FY 2016<br>
-                              Address: 46 Convoy St, San Diego, CA 92111<br>
+                              <b>4th Ave Cleaners</b><br>
+                              $9100 from 7 contracts in FY 2016<br>
+                              Address: 4 Cony St, San Diego, CA 92111<br>
                               <!-- Top Awarding Agency: Department of Homeland Security<br> -->
                               Number of employees: 67<br>
                             </a>
                           </div>
                           <div class="col-md-3 b-b b-r">
                             <a href="https://spendingdata.us/#/award/44078" class="block padder-v hover">
-                               Applegate Design<br>
-                              $45,000 from 1 contract in FY 2016<br>
+                              <b>Wash N Go Laundry</b><br>
+                              $4,000 from 1 contract in FY 2016<br>
                               Address: 505 Laurel St, San Diego, CA 92101<br>
                               <!-- Top Awarding Agency: Department of Education<br> -->
                               Number of employees: 13<br>
@@ -186,8 +221,8 @@
                           </div>
                           <div class="col-md-3 b-b b-r">
                             <a href="https://spendingdata.us/#/award/44078" class="block padder-v hover">
-                                Focus Lab, LLC<br>
-                                $732,000 from 5 contracts in FY 2016<br>
+                                <b>VIP Cleaners and Laundry</b><br>
+                                $1,732 from 5 contracts in FY 2016<br>
                                 Address: 505 Laurel St, San Diego, CA 92101<br>
                                 <!-- Top Awarding Agency: Department of Health and Human Services<br> -->
                                 Number of employees: 20<br>
@@ -197,6 +232,8 @@
                       </div>
                     </div>                     
                   </div>
+                  </div>
+                  </section>
 
                     <div class="col-sm-3 hide">
                       <section class="panel b-a">
@@ -226,56 +263,39 @@
                         </div>
                       </section>                      
                     </div>
-                  </div>       
-                  
-                  <div class="row bg-light dk m-b">
-                    <div class="col-md-12 dker">
-                      <section>
-                        <header class="font-bold padder-v">
-                          <div class="pull-right">
-                            <div class="btn-group">
-                              <button data-toggle="dropdown" class="btn btn-sm btn-rounded btn-default dropdown-toggle">
-                                <span class="dropdown-label">Week</span> 
-                                <span class="caret"></span>
-                              </button>
-                              <ul class="dropdown-menu dropdown-select">
-                                  <li><a href="#"><input type="radio" name="b">Month</a></li>
-                                  <li><a href="#"><input type="radio" name="b">Week</a></li>
-                                  <li><a href="#"><input type="radio" name="b">Day</a></li>
-                              </ul>
-                            </div>
-                          </div>
-                          Historical Statistics
-                        </header>
-                        <div class="panel-body">
-                          <div id="flot-sp1ine" style="height:210px"></div>
-                        </div>
-                        <div class="row text-center no-gutter">
-                          <div class="col-xs-3">
-                            <span class="h4 font-bold m-t block"><p id="contracts"></p></span>
-                            <small class="text-muted m-b block">Contracts</small>
-                          </div>
-                          <div class="col-xs-3">
-                            <span class="h4 font-bold m-t block"><p id="businesses_2"></p></span>
-                            <small class="text-muted m-b block">Companies</small>
-                          </div>
-                          <div class="col-xs-3">
-                            <span class="h4 font-bold m-t block"><p id="total"></p></span>
-                            <small class="text-muted m-b block">Total Contracts Value</small>
-                          </div>
-                          <div class="col-xs-3">
-                            <span class="h4 font-bold m-t block"><p id="agencies"></p></span>
-                            <small class="text-muted m-b block">Agencies</small>                        
-                          </div>
-                        </div>
-                      </section>
+    
+                <section class="panel panel-default">
+                <header class="panel-heading font-bold">Spending Trends</header>
+                <div class="panel-body">
+                  <div id="flot-1ine" style="height:250px"></div>
+                </div>
+                <footer class="panel-footer bg-white">
+                  <div class="row text-center no-gutter">
+                    <div class="col-xs-3 b-r b-light">
+                      <p id="contracts" class="h3 font-bold m-t"></p>
+                      <p class="text-muted">Contracts</p>
+                    </div>
+                    <div class="col-xs-3 b-r b-light">
+                      <p class="h3 font-bold m-t" id="businesses_2"></p>
+                      <p class="text-muted">Companies</p>
+                    </div>
+                    <div class="col-xs-3 b-r b-light">
+                      <p id="total" class="h3 font-bold m-t"></p>
+                      <p class="text-muted">Total Contract Value</p>
+                    </div>
+                    <div class="col-xs-3">
+                      <p class="h3 font-bold m-t" id="agencies"></p>
+                      <p class="text-muted">Agencies</p>                        
                     </div>
                   </div>
-                  
-                  <div class="row" style="margin-top:80px">
-                    <center><h4 style="font-size:30px">Recent Contracts</h4></center>
+                </footer>
+              </section>
+                     
+                  <section class="panel panel-default">
+                <header class="panel-heading font-bold">Recent Contracts</header>
+                <div class="panel-body">
 
-                    <script> 
+                  <script> 
                           var contracts = {{ data | tojson }}; 
                           // document.getElementById("print").innerHTML = contracts
                           var obj = JSON.parse(contracts);
@@ -315,13 +335,13 @@
                           var total = 0
                           var num_contracts = 0
 
-                          document.getElementById("city").innerHTML = city
-                          document.getElementById("state").innerHTML = state
+                          // document.getElementById("city").innerHTML = city
+                          // document.getElementById("state").innerHTML = state
                           document.getElementById("businesses").innerHTML = num_businesses
                           document.getElementById("businesses_2").innerHTML = num_businesses
                           document.getElementById("agencies").innerHTML = num_agencies
 
-                          var myTable = "<table class='table'><thead><tr><th>COMPANY</th><th>AGENCY</th><th>DESCRIPTION</th><th width='90'>DATE</th><th width='90'>CONTRACT VALUE</th><th>DETAILS</th></tr></thead><tbody>";
+                          var myTable = "<table class='table'><thead><tr><th>COMPANY</th><th>AGENCY</th><th>DESCRIPTION</th><th width='90'>DATE</th><th width='90'>VALUE</th><th>DETAILS</th></tr></thead><tbody>";
 
                           var agency = null; 
                           for (var i = 0; i < size; i++) {
@@ -346,32 +366,47 @@
                             myTable += "<tr><td>N/A</td><td>No Results found for this search</td><td>N/A</td><td>N/A</td></tr>"
                           }
 
-                          myTable += "<tr><td colspan='3' class='text-right no-border'><strong>Total</strong></td><td><strong>$" + total + "</strong></td></tr></tbody></table>"
+                          myTable += "<tr><td colspan='4' class='text-right no-border'><strong>Total</strong></td><td><strong>$" + total + "</strong></td><td></td></tr></tbody></table>"
 
-                          document.write( myTable);
+                          document.write(myTable);
                           document.getElementById("total").innerHTML = "$" + total.toString()
                           document.getElementById("contracts").innerHTML = num_contracts.toString()
                           
-                      </script>
+                      </script>                    
 
-                    <div class="line"></div>
                   </div>
-                
-                <center><h4 style="font-size:30px">See More Resources</h4></center>
-                <div class="row" style="margin-top:50px; margin-bottom:80px; margin-left:500px;margin-right:300px;">
-                      <div class="col-sm-6">
-                       <h3>Fedral</h3>
-                        <a href="https://www.fbo.gov/">Fed Biz Opps</a>
-                        <div class="w-100"></div>
-                        <a href="https://www.sba.gov/">SBA</a>
-                      </div>
-                      <div class="col-sm-6">
-                       <h3>Local</h3>
-                        <a href="https://www.fbo.gov/">SBA Advisors</a>
-                        <div class="w-100"></div>
-                        <a href="https://www.sba.gov/">Chamber of Commerce</a>
-                      </div>
                   </div>
+                  </section>
+
+                  
+
+                  <section class="panel panel-default">
+                <header class="panel-heading font-bold">Where to Go from Here</header>
+                <div class="panel-body">
+                  <div class="well b bg-light m-t">
+                <div class="row">
+                  <div class="col-xs-6">
+                    <h3>Federal Resources</h3>
+                    <p>
+                      <b>Federal Business Opportunities</b><br>
+                      web: <a href="www.fbo.gov">https://www.fbo.gov/index?s=opportunity&mode=list&tab=list</a><br>
+                      FedBizOpps, or FBO, is the Federal government's website (fedbizopps.gov) that posts all Federal procurement opportunities over opportunities with a value over $25,000. Think of it as the government's proposal central, or better yet, RFP central.
+                    </p>
+                  </div>
+                  <div class="col-xs-6">
+                    <h3>Local Resources</h3>
+                    <p>
+                      <b><p id="city"></p> Small Business Association</b><br>
+                      web: <a href="https://www.sba.gov/offices/district/ca/san-diego">https://www.sba.gov/offices/district/ca/san-diego</a><br>
+                      Address: 550 West C Street Suite 550 San Diego, CA<br>
+                      Phone: 619-557-7250<br>
+                      Over the years, the SBA has developed many small business loan and assistance programs, special outreach efforts and initiatives to aid and inform small businesses. 
+                    </p>
+                  </div>
+                </div>
+              </div>
+              </div>
+              </section>
                   
                 </section>
               </section>
