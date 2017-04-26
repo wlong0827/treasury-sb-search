@@ -38,9 +38,12 @@ def index():
 
 @app.route('/local_file', methods = ['POST'])
 def local():
-    zipcode = request.form['location_id']
+    zipcode = request.form['zipcode']
     size = request.form['size']
-    industry = request.form['industry']
+    industry = request.form['naics2']
+    print zipcode
+    print size
+    print industry
     query = {}
     print zipcode
     if not zipcode == "":
