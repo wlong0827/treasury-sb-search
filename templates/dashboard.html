@@ -44,7 +44,7 @@
                       <div class="col-sm-6">
                       <center>
                         <p class="h2 font-bold m-t">Businesses Like Me</p>
-                        <p class="h4 font-bold m-t">Discover past government spending for businesses similar to yours</p>
+                        <p class="h4 font-bold m-t">Discover past government spending in categories important to yous</p>
                       </center>
                       <!-- <center><large style="font-size:20px">Searching near <i class="fa fa-map-marker fa-lg text-primary"></i> <ins id="city"></ins>, <ins id="state"></ins></large></center> -->                      
                     </div>
@@ -62,45 +62,79 @@
                             <span>Industry:</span>
                             <select style="width:50%">
                               <option>Select</option>
-                      <option>11  Agriculture, Forestry, Fishing and Hunting</option>
-                      <option>21  Mining</option>
-                       <option>22  Utilities</option>
-                       <option>23  Construction</option>
-                        <option>31   Manufacturing   </option>
-                        <option>42  Wholesale Trade</option>
-                       <option>44  Retail Trade</option>
-                       <option>48   Transportation and Warehousing</option>
-                       <option>51  Information</option>
-                       <option>52  Finance and Insurance   </option>
-                        <option>53  Real Estate Rental and Leasing  </option>
-                      <option>54  Professional, Scientific, and Technical Services    </option>
-                      <option>55  Management of Companies and Enterprises</option>
-                       <option>56  Administrative and Support and Waste Management and Remediation Services    </option>
-                       <option>61  Educational Services</option>
-                       <option>62  Health Care and Social Assistance   </option>
-                       <option>71  Arts, Entertainment, and Recreation</option>
-                       <option>72  Accommodation and Food Services</option>
-                       <option>81  Other Services (except Public Administration)</option>
-                       <option>92  Public Administration</option>
+                              <option>11  Agriculture, Forestry, Fishing and Hunting</option>
+                              <option>21  Mining</option>
+                               <option>22  Utilities</option>
+                               <option>23  Construction</option>
+                                <option>31   Manufacturing   </option>
+                                <option>42  Wholesale Trade</option>
+                               <option>44  Retail Trade</option>
+                               <option>48   Transportation and Warehousing</option>
+                               <option>51  Information</option>
+                               <option>52  Finance and Insurance   </option>
+                                <option>53  Real Estate Rental and Leasing  </option>
+                              <option>54  Professional, Scientific, and Technical Services    </option>
+                              <option>55  Management of Companies and Enterprises</option>
+                               <option>56  Administrative and Support and Waste Management and Remediation Services    </option>
+                               <option>61  Educational Services</option>
+                               <option>62  Health Care and Social Assistance   </option>
+                               <option>71  Arts, Entertainment, and Recreation</option>
+                               <option>72  Accommodation and Food Services</option>
+                               <option selected="selected">81  Other Services (except Public Administration)</option>
+                               <option>92  Public Administration</option>
                             </select>
 
                           </div>
-                          <div class="col-md-3">
+                        <div class="col-md-3">
+                            <span>Sub-industry:</span>
+                        <select name="naics4" style="width:50%; ">
+                          <option>Select</option>
+  <!--
+                          <option>5411: Legal Services</option>
+                          <option>5412: Accounting, Tax Preparation, Bookkeeping, and Payroll Services</option>
+                          <option>5413: Architectural, Engineering, and Related Services</option>
+                          <option>5414: Specialized Design Services</option>
+                          <option>5415: Computer Systems Design and Related Services</option>
+                          <option>5416: Management, Scientific, and Technical Consulting Services</option>
+                          <option>5417: Scientific Research and Development Services</option>
+                          <option>5418: Advertising, Public Relations, and Related Services</option>
+                          <option>5419: Other Professional, Scientific, and Technical Services</option>
+  -->
+                          
+                          
+                          <option>8111: Automotive Repair and Maintenance</option>
+                          <option>8112: Electronic and Precision Equipment Repair and Maintenance</option>
+                          <option>8113: Commercial and Industrial Machinery and Equipment (except Automotive and Electronic) Repair and Maintenance</option>
+                          <option>8114: Personal and Household Goods Repair and Maintenance</option>
+                          <option>8121: Personal Care Services</option>
+                          <option>8122: Death Care Services</option>
+                          <option selected="selected">8123: Drycleaning and Laundry Services</option>
+                          <option>8129: Other Personal Services</option>
+                          <option>8131: Religious Organizations</option>
+                          <option>8132: Grantmaking and Giving Services</option>
+                          <option>8133: Social Advocacy Organizations</option>
+                          <option>8134: Civic and Social Organizations</option>
+                          <option>8139: Business, Professional, Labor, Political, and Similar Organizations</option>
+                          <option>8141: Private Households</option>
+                      </select>
+                    </div>
+
+                          <div class="col-md-2">
                             <span>Zipcode:</span>
-                            <input type="text" name="location"></input>
+                            <input type="text" name="location" value="92115" style="width:50%"></input>
                           </div>
                           <div class="col-md-3">
                             <span>Size:</span>
                             <select>
                               <option>Select</option>
-                      <option>Under 10 employees</option>
+                      <option selected="selected">Under 10 employees</option>
                       <option>Between 10 - 49 employees</option>
                         <option>Between 50 - 99 employees</option>
                       <option>Over 100 employees</option>
                             </select>
                           </div>
 
-                          <div class="col-md-3">
+                          <div class="col-md-1">
                             <a href="/" type="submit" class="btn btn-sm btn-default" style="margin-top:-3px">Search Again</a>
                             
                           </div>

@@ -18,8 +18,8 @@
 <body>
 
         <div class="col-sm-6" style="text-align: left; margin-left:350px">
-          <center><h2 class="m-b-none">Small Businesses Like Me</h2></center>
-          <center><p class="h4 font-bold m-t">Discover past government spending for businesses similar to yours</p></center>
+          <center><h2 class="m-b-none">Businesses Like Me</h2></center>
+          <center><p class="h4 font-bold m-t">Discover past government spending in categories important to you</p></center>
             <br>
             
             <form role="form" action="local_file" method="post">
@@ -56,7 +56,7 @@
                     
                     <p style="margin-left:290px">or</p>
                     
-                  <label>4-digit NAICS Code</label>
+                  <label>What sub-industry are you in? (Optional)</label>
                     <select name="naics4" class="form-control input-sm">
                         <option>Select</option>
 <!--
@@ -92,7 +92,7 @@
                   
                   <div class = "form-group" style="width:50%; float:right">
                     <label>Product or Service Code</label>
-                  <input name="psc" class="form-control input-sm" style="width:50%" placeholder="Enter Code Here">
+                  <input name="psc" class="form-control input-sm" style="width:50%" placeholder="Keyword">
                   </div>
             
             </div>
@@ -102,9 +102,9 @@
                 <header class="panel-heading font-bold">Geography</header>
                 <div class="panel-body">
                     <div style="float:left;">
-                    <label>Where are you located?</label>
+                    <label>Which location(s) are you interested in?</label>
                     <div class="radio i-checks">
-                          <label>
+                          <!-- <label>
                             <input type="radio" name="nation" value="nation">
                             <i></i>
                             Nation
@@ -117,7 +117,7 @@
                                 <option value="HI">Canada</option>
                                 <option value="HI">Mexico</option>
                             </optgroup>
-                        </select>
+                        </select> -->
                         
                         </div>
                     <div class="radio i-checks" style="margin-top:10px">
