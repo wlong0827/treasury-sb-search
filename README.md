@@ -13,3 +13,5 @@ Spring 2017 DPI-663 Final Project: using the new U.S. Treasury spending API to p
 ## Implementation Details
 
 Back-end uses [Flask](http://flask.pocoo.org/). Front-end uses [Bootstrap](http://getbootstrap.com/), [jQuery](https://jquery.com/), and [jQueryUI](https://jqueryui.com/).
+
+Deployment: [Heroku](https://www.heroku.com/)
